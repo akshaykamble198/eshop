@@ -1,0 +1,101 @@
+<section class="shadow p-3 mb-5 bg-body rounded ">
+    <div class="container d-flex justify-content-center  ">
+        <div class="mx-5">
+            <a (click)="filteredProducts('')">
+            <img src="./assets/images/topOffers.png" height="70" width="70" alt="">
+            <a class="d-block ms-1 text-decoration-none text-black" href="#">Top Offers</a>
+            </a>
+        </div>
+        <div class="mx-5">
+            <a (click)="filteredProducts('grocery')">
+            <img src="./assets/images/grocery.png" height="70" width="70" alt="">
+            <a class="d-block ms-2 text-decoration-none text-black" href="#">Grocery</a>
+            </a>
+        </div>
+        <div class="mx-5">
+            <a (click)="filteredProducts('mobiles')">
+            <img src="./assets/images/mobiles.png" height="70" width="70" alt="">
+            <a class="d-block ms-2 text-decoration-none text-black" href="#">Mobiles</a>
+            </a>
+        </div>
+        <div class="mx-5">
+            <a (click)="filteredProducts('fashion')">
+            <img src="./assets/images/fashion.png" height="70" width="70" alt="">
+            <a class="d-block ms-2 text-decoration-none text-black" href="#">Fashion</a>
+            </a>
+        </div>
+        <div class="mx-5">
+            <a (click)="filteredProducts('electronics')">
+            <img src="./assets/images/electronics.png" height="70" width="70" alt="">
+            <a class="d-block text-decoration-none text-black" href="#">Electronics</a>
+            </a>
+        </div>
+        <div class="mx-5">
+            <a (click)="filteredProducts('home')">
+            <img src="./assets/images/home.png" height="70" width="70" alt="">
+            <a class="d-block ms-3 text-decoration-none text-black" href="#">Home</a>
+            </a>
+        </div>
+        <div class="mx-5">
+            <a (click)="filteredProducts('babycare')">
+            <img src="./assets/images/babycare.png" height="70" width="70" alt="">
+            <a class="d-block text-decoration-none text-black" href="#">Baby Care</a>
+            </a>
+        </div>
+        <div class="mx-5">
+            <a (click)="filteredProducts('accesorries')">
+            <img src="./assets/images/accesorries.png" height="70" width="70" alt="">
+            <a class="d-block text-decoration-none text-black" href="#">Accessories</a>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="mb-5 bg-body rounded">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./assets/images/caro1.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./assets/images/caro2.png" class="d-block" width="1500" height="250" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./assets/images/caro3.png" class="d-block" width="1500" height="250"  alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+</section>
+
+
+
+<section class="mt-2 sectionmargin">
+    <div class="container">
+        <div class="row">
+            <div class=" col-sm-12 col-md-6 col-lg-4 mb-4" *ngFor="let i of filteredArray">
+                <div class="card" style="width: 18rem;">
+                    <img src={{i.img}} class="card-img-top" width="80px" height="380px" alt="...">
+                    <div class="card-body">
+                        <h2 class="card-title">{{i.title}}</h2>
+                        <h3 class="card-text">{{i.details}}</h3>
+                        <p class="card-text">Price:<strong>{{i.price | currency:"INR"}}</strong></p>
+                        <a href="#" class="btn btn-primary">Add to cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+ 

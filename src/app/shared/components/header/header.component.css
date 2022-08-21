@@ -1,0 +1,20 @@
+
+    .searchInput{
+        width:600px;
+        margin-left: 190px;
+    }
+.title{
+    position: relative;
+    left: 190px;
+    color: white;
+}
+.listItem{
+    margin-left: 15px;
+    color: white;
+}
+.loginButton{
+    padding: 5px 40px;
+    background-color: white;
+    color: blue;
+    margin-top: 4px;
+}
