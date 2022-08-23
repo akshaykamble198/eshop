@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { passMisMatch } from 'src/app/shared/validators/custom validators';
+import { EventEmitter } from '@angular/core';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -7,12 +10,21 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
+
 signUpForm!:FormGroup;
-  constructor(private fb:FormBuilder) { }
+
+@Input() actionName='';
+
+@Output() signUpCompleted :EventEmitter<boolean>=new EventEmitter(false);
+
+  constructor(private fb:FormBuilder,private loginService:LoginService) { }
 
   ngOnInit(): void {
     this.createSignUpForm();
   }
+
+
+
   createSignUpForm(){
     this.signUpForm=this.fb.group({
       "firstName":['',[Validators.required,Validators.minLength(2),Validators.maxLength(10),Validators.pattern("^[a-zA-Z]+$")]],
@@ -20,21 +32,35 @@ signUpForm!:FormGroup;
       "mobileNumber":['',[Validators.required,Validators.minLength(10),Validators.maxLength(10)]],
       "dateOfBirth":['',[Validators.required]],
       "emailId":['',[Validators.required,Validators.email]],
-      "password":['',[Validators.required]],
-      "confirmPassword":['',[Validators.required]],
+      "password":['',[Validators.required,Validators.minLength(2),Validators.maxLength(10)]],
+      "confirmPassword":['',[Validators.required,Validators.minLength(2),Validators.maxLength(10)]],
       "address":this.fb.group({
-        "line1":['',[Validators.required]],
+        "line1":['',[]],
         "line2":['',[]],
-        "city":['',[Validators.required]],
-        "state":['',[Validators.required]],
-        "zipcode":['',[Validators.required]],
+        "city":['',[]],
+        "state":['',[]],
+        "zipcode":['',[]],
       })
       
+    },{validator:passMisMatch}
+    )
+  }
+
+
+
+
+
+  onSubmit(){
+    console.log("values",this.signUpForm.value);
+    if(this.signUpForm.valid){
+    this.loginService.registerUser(this.signUpForm.value).subscribe(el=>{
+      console.log("response",el);
+      this.signUpCompleted.emit(true)
+      
+
     })
   }
-  onSubmit(){
-    console.log("values",this.signUpForm.value)
-  }
+}
   get firstname(){
    return this.signUpForm.get("firstName")
   }
@@ -47,7 +73,9 @@ signUpForm!:FormGroup;
    get email(){
     return this.signUpForm.get("emailId")
    }
-
+   get confirmPassword(){
+    return this.signUpForm.get("confirmPassword")
+   }
    get line1(){
     return this.signUpForm.get("line1")
    }
