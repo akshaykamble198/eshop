@@ -10,7 +10,7 @@
     font-size: x-large;
 }
 .listItem{
-    margin-left: 35px;
+    margin-left: 25px;
     color: white;
     font-weight: 500;
     font-size: large;
@@ -20,4 +20,9 @@
     background-color: white;
     color: blue;
     margin-top: 4px;
+}
+.searchBox{
+    flex-grow: 2;
+    height: 34px;
+    margin-left: 35px;
 }
