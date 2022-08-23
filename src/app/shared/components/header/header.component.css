@@ -7,10 +7,13 @@
     position: relative;
     left: 190px;
     color: white;
+    font-size: x-large;
 }
 .listItem{
-    margin-left: 15px;
+    margin-left: 35px;
     color: white;
+    font-weight: 500;
+    font-size: large;
 }
 .loginButton{
     padding: 5px 40px;

@@ -1,1 +1,121 @@
-<p>sign-up works!</p>
+<div class="jumbotron">
+    <div class="card">
+        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" class="row-g-3 text-left bg-white">
+            <div class="mb-1">
+                <label for="firstName" class="form-label">FirstName</label>
+                <input type="text" class="form-control " name="firstName" id="firstName" formControlName="firstName">
+                <span *ngIf="firstname && firstname.invalid && firstname.touched" style="color: red;">Enter valid First Name.</span><br>
+                    <span *ngIf=" firstname?.errors?.['maxlength'] " style="color: red;">Max 10 letters are allowed</span>
+                <!-- <div class="valid-feedback">
+                    Looks Good
+                </div> -->
+            </div>
+            <div class="mb-1">
+                <label for="lastName" class="form-label">LastName</label>
+                <input type="text" class="form-control " name="lastName" id="lastName"
+                    formControlName="lastName">
+                    <span *ngIf="lastname && lastname.invalid && lastname.touched" style="color: red;">Enter valid Last Name</span>
+
+                <!-- <div class="valid-feedback">
+                    Looks Good
+                </div> -->
+            </div>
+            <div class="mb-1">
+                <label for="mobileNumber" class="form-label">Mobile No</label>
+                <input type="number" class="form-control " name="mobileNumber" id="mobileNumber"
+                    formControlName="mobileNumber">
+                    <span *ngIf="mob && mob.invalid && mob.touched" style="color: red;">Enter valid mobile no</span>
+
+                <!-- <div class="valid-feedback">
+                    Looks Good
+                </div> -->
+            </div>
+            <div class="mb-1">
+                <label for="dateOfBirth" class="form-label">Date Of Birth</label>
+                <input type="date" class="form-control " name="dateOfBirth" id="dateOfBirth"
+                    formControlName="dateOfBirth">
+                <!-- <div class="valid-feedback">
+                    Looks Good
+                </div> -->
+            </div>
+            <div class="mb-1">
+                <label for="emailId" class="form-label">Email Id</label>
+                <input type="email" class="form-control " name="emailId" id="emailId" formControlName="emailId">
+                <span *ngIf="email && email.invalid && email.touched" style="color: red;">Enter valid email id</span>
+
+                <!-- <div class="valid-feedback">
+                    Looks Good
+                </div> -->
+            </div>
+            <div class="mb-1">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control " name="password" id="password"
+                    formControlName="password">
+                <!-- <div class="valid-feedback">
+                    Looks Good
+                </div> -->
+            </div>
+            <div class="mb-1">
+                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control " name="confirmPassword" id="confirmPassword"
+                    formControlName="confirmPassword">
+                <!-- <div class="valid-feedback">
+                    Looks Good
+                </div> -->
+            </div>
+            <div formGroupName="address">
+                <h3>Address</h3>
+                <div class="col-md-6">
+                    <label for="line1" class="form-label">Line 1</label>
+                    <input type="text" class="form-control " name="line1" id="line1" formControlName="line1">
+                    <span *ngIf="line1 && line1.invalid && line1.touched" style="color: red;">This field is mandatory</span>
+
+                    <!-- <div class="valid-feedback">
+                        Looks Good
+                    </div> -->
+                </div>
+                <div class="col-md-6">
+                    <label for="line2" class="form-label">Line 2</label>
+                    <input type="text" class="form-control " name="line2" id="line2" formControlName="line2">
+
+                    <!-- <div class="valid-feedback">
+                        Looks Good
+                    </div> -->
+                </div>
+                <div class="col-md-6">
+                    <label for="city" class="form-label">City</label>
+                    <input type="text" class="form-control " name="city" id="city" formControlName="city">
+                    <span *ngIf="city && city.invalid && city.touched" style="color: red;">This field is mandatory</span>
+
+                    <!-- <div class="valid-feedback">
+                        Looks Good
+                    </div> -->
+                </div>
+                <div class="col-md-6">
+                    <label for="state" class="form-label">State</label>
+                    <input type="text" class="form-control " name="state" id="state" formControlName="state">
+                    <span *ngIf="state && state.invalid && state.touched" style="color: red;">This field is mandatory</span>
+
+                    <!-- <div class="valid-feedback">
+                        Looks Good
+                    </div> -->
+                </div>
+                <div class="col-md-6">
+                    <label for="zipcode" class="form-label">Zipcode</label>
+                    <input type="text" class="form-control " name="zipcode" id="zipcode"
+                        formControlName="zipcode">
+                        <span *ngIf="zip && zip.invalid && zip.touched" style="color: red;">This field is mandatory</span>
+
+                    <!-- <div class="valid-feedback">
+                        Looks Good
+                    </div> -->
+                </div>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Confirm</button>
+            </div>
+
+        </form>
+    </div>
+
+</div>

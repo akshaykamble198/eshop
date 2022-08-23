@@ -31,13 +31,14 @@ filteredArray:any=[];
     "price":499
   },
   {
-    "id":3,
-    "img":"./assets/images/mobile1.png",
-    "category":"mobiles",
-    "title":"realme C25_Y(Metal Grey,128 GB)",
-    "details":"4 GB RAM | 128 GB ROM",
-    "price":11999
-  },
+    "id":10,
+    "img":"./assets/images/home2.png",
+    "category":"home",
+    "title":"Bharat Sofa set",
+    "details":"Alina Fabric 3 + 2 Sofa Set",
+    "price":25999
+  }
+  ,
   {
     "id":4,
     "img":"./assets/images/mobile2.png",
@@ -67,8 +68,16 @@ filteredArray:any=[];
     "img":"./assets/images/electronics1.png",
     "category":"electronics",
     "title":"Samsung washing machine",
-    "details":"6 kg 5 Star With Hygiene Steam and Ceramic Heater Fully Automatic Front Load with In-built Heater Silver ",
+    "details":"6 kg 5 Star With Hygiene Steam and Ceramic Heater Fully Automatice",
     "price":23990
+  },
+  {
+    "id":3,
+    "img":"./assets/images/mobile1.png",
+    "category":"mobiles",
+    "title":"realme C25_Y(Metal Grey,128 GB)",
+    "details":"4 GB RAM | 128 GB ROM",
+    "price":11999
   },
   {
     "id":8,
@@ -86,14 +95,7 @@ filteredArray:any=[];
     "details":"144 TC Microfiber Double Printed Flat Bedsheet",
     "price":599
   },
-  {
-    "id":10,
-    "img":"./assets/images/home2.png",
-    "category":"home",
-    "title":"Bharat Sofa set",
-    "details":"Alina Fabric 3 + 2 Sofa Set",
-    "price":25999
-  },
+ 
   {
     "id":11,
     "img":"./assets/images/babycare1.png",
