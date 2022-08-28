@@ -9,10 +9,12 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http'
 import { LoginModule } from './login/login.module';
+import { ToastrModule } from 'ngx-toastr';
+import { HomeRoutingModule } from './home/home-routing.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,6 +24,8 @@ import { LoginModule } from './login/login.module';
     RouterModule,
     AppRoutingModule,
     HttpClientModule,
+    HomeRoutingModule,
+    ToastrModule.forRoot()
     
   ],
   providers: [],

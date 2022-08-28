@@ -7,7 +7,12 @@ import { HttpService } from '../http/http.service';
 export class AuthenticationService {
 
   constructor( ) { }
-
+getUser(){
+  let user:any
+  user=localStorage.getItem("user");
+  user=JSON.parse(user);
+  return user;
+}
 
 
 }

@@ -9,8 +9,18 @@
       </form>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
-          <li class="nav-item">
-            <a class="nav-link loginButton listItem " aria-current="page" data-bs-toggle="modal" href="#" data-bs-target="#exampleModal">Login</a>
+          <li class="nav-item" *ngIf="!isUserLoggedIn">
+            <a class="nav-link loginButton listItem "  aria-current="page" data-bs-toggle="modal" href="#" data-bs-target="#exampleModal">Login</a>
+          </li>
+          <li class="nav-item dropdown" *ngIf="isUserLoggedIn">
+            <a class="nav-link dropdown-toggle listItem" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             Welcome {{user.firstName}}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" [routerLink]="['/signUp']">My Profile</a></li>
+              <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
+              
+            </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link listItem" href="#">Become a seller</a>
@@ -47,10 +57,10 @@
     <div class="modal-content">
       <div class="modal-header">
         <h3 class="modal-title " id="exampleModalLabel">{{actionType}}</h3>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" #closebutton class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <app-sign-in *ngIf="actionType == 'SignIn'"></app-sign-in>
+        <app-sign-in *ngIf="actionType == 'SignIn'" (signInCompleted)="signInHandler($event)"></app-sign-in>
         <app-sign-up *ngIf="actionType == 'SignUp'" [actionName]="'signUp'" (signUpCompleted)="signUpHandler($event)"></app-sign-up>
       </div>
       <div class="modal-footer">

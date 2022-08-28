@@ -203,6 +203,23 @@
         "zipcode": ""
       },
       "id": 2
+    },
+    {
+      "firstName": "ms",
+      "lastName": "dhoni",
+      "mobileNumber": 7777777777,
+      "dateOfBirth": "1985-04-14",
+      "emailId": "msd@gmail.com",
+      "password": "7777",
+      "confirmPassword": "7777",
+      "address": {
+        "line1": "",
+        "line2": "",
+        "city": "",
+        "state": "",
+        "zipcode": ""
+      },
+      "id": 3
     }
   ]
 }
