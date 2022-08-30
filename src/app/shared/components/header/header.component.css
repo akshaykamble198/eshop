@@ -1,0 +1,28 @@
+
+    .searchInput{
+        width:600px;
+        margin-left: 190px;
+    }
+.title{
+    position: relative;
+    left: 190px;
+    color: white;
+    font-size: x-large;
+}
+.listItem{
+    margin-left: 25px;
+    color: white;
+    font-weight: 500;
+    font-size: large;
+}
+.loginButton{
+    padding: 5px 40px;
+    background-color: white;
+    color: blue;
+    margin-top: 4px;
+}
+.searchBox{
+    flex-grow: 2;
+    height: 34px;
+    margin-left: 35px;
+}
