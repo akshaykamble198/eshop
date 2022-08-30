@@ -11,20 +11,21 @@ import {HttpClientModule} from '@angular/common/http'
 import { LoginModule } from './login/login.module';
 import { ToastrModule } from 'ngx-toastr';
 import { HomeRoutingModule } from './home/home-routing.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     SharedModule,
     HomeModule,
+    LoginModule,
     RouterModule,
     AppRoutingModule,
     HttpClientModule,
-    HomeRoutingModule,
     ToastrModule.forRoot()
     
   ],

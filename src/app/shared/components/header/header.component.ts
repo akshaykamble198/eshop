@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/core/authentication/authentication.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class HeaderComponent implements OnInit {
   isUserLoggedIn:boolean=false;
   user:any;
   @ViewChild('closebutton') closebutton: any;
-  constructor(private authsvc:AuthenticationService) { }
+  constructor(private authsvc:AuthenticationService,private route:Router) { }
 
   ngOnInit(): void {
     this.getUserDetails();
@@ -41,5 +42,6 @@ export class HeaderComponent implements OnInit {
     localStorage.removeItem("user");
     this.isUserLoggedIn=false;
     // location.reload();
+    this.route.navigate(['/home'])
   }
 }

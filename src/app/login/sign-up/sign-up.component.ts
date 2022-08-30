@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { passMisMatch } from 'src/app/shared/validators/custom validators';
 import { EventEmitter } from '@angular/core';
 import { LoginService } from '../services/login.service';
+import { AuthenticationService } from 'src/app/core/authentication/authentication.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -16,11 +17,16 @@ signUpForm!:FormGroup;
 @Input() actionName='';
 
 @Output() signUpCompleted :EventEmitter<boolean>=new EventEmitter(false);
+  formDetails: any;
 
-  constructor(private fb:FormBuilder,private loginService:LoginService) { }
+  constructor(private fb:FormBuilder,private loginService:LoginService, private auth:AuthenticationService) { }
 
   ngOnInit(): void {
     this.createSignUpForm();
+    this.formDetails = this.auth.getUser();
+    if(this.formDetails != null){
+      this.signUpForm.patchValue(this.formDetails);
+    }
   }
 
 

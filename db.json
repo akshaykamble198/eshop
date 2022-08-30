@@ -220,6 +220,23 @@
         "zipcode": ""
       },
       "id": 3
+    },
+    {
+      "firstName": "virat",
+      "lastName": "kohli",
+      "mobileNumber": 1234567890,
+      "dateOfBirth": "1984-12-14",
+      "emailId": "virat@gmail.com",
+      "password": "1818",
+      "confirmPassword": "1818",
+      "address": {
+        "line1": "",
+        "line2": "",
+        "city": "",
+        "state": "",
+        "zipcode": ""
+      },
+      "id": 4
     }
   ]
 }
