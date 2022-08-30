@@ -12,6 +12,8 @@ const routes: Routes = [
   {path:"signin",component:SignInComponent},
   {path:"signup",component:SignUpComponent},
   {path:"",redirectTo:"/home",pathMatch:"full"},
+  { path: 'cart', loadChildren: () => import('./cart/cart.module').then(m => m.CartModule) },
+  { path: 'seller', loadChildren: () => import('./seller/seller.module').then(m => m.SellerModule) },
 
 ];
 

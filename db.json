@@ -237,6 +237,23 @@
         "zipcode": ""
       },
       "id": 4
+    },
+    {
+      "firstName": "prajkta",
+      "lastName": "kamble",
+      "mobileNumber": 1234567890,
+      "dateOfBirth": "1996-04-02",
+      "emailId": "prajkta@gmail.com",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "address": {
+        "line1": "",
+        "line2": "",
+        "city": "",
+        "state": "",
+        "zipcode": ""
+      },
+      "id": 5
     }
   ]
 }

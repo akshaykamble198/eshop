@@ -10,7 +10,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
           <li class="nav-item" *ngIf="!isUserLoggedIn">
-            <a class="nav-link loginButton listItem "  aria-current="page" data-bs-toggle="modal" href="#" data-bs-target="#exampleModal">Login</a>
+            <a class="nav-link loginButton listItem "  aria-current="page" data-bs-toggle="modal" href="" data-bs-target="#exampleModal">Login</a>
           </li>
           <li class="nav-item dropdown" *ngIf="isUserLoggedIn">
             <a class="nav-link dropdown-toggle listItem" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -23,7 +23,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link listItem" href="#">Become a seller</a>
+            <a class="nav-link listItem" href="" [routerLink]="['/seller']">Become a seller</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle listItem" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -37,7 +37,8 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link listItem" href="#"><i class="bi bi-cart4"></i>Cart</a>
+            <a class="nav-link listItem"  href="" [routerLink]="['/cart']"><i class="bi bi-cart4"></i>Cart  <span class=" ms-2  translate-middle badge rounded-pill bg-danger">
+              {{(cartCount | async)?.length}}</span></a>
           </li>
         </ul>
        
