@@ -41,7 +41,9 @@ filteredArray:any=[];
   }
 
   addToCart(i:Product){
+    
     this.cart.addItemToCart(i);
+    
   }
 
 }

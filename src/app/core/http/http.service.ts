@@ -15,6 +15,7 @@ export class HttpService {
       .set("Allow-All-origin", "*")
   }
   constructor(private http: HttpClient) { }
+  
 
 
   getData(endPoint: string, params: HttpParams = new HttpParams()) {

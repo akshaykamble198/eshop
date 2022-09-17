@@ -14,13 +14,14 @@ export class HeaderComponent implements OnInit {
   actionType:string="SignIn";
   isUserLoggedIn:boolean=false;
   user:any;
-  cartCount:Observable<Product[]> | null =null;
+  cartCount:Observable<Product[]> |null =null;
   @ViewChild('closebutton') closebutton: any;
   constructor(private authsvc:AuthenticationService,private route:Router,private cart:CartService) { }
 
   ngOnInit(): void {
     this.getUserDetails();
     this.cartCount=this.cart.selectItem
+    console.log("length",this.cartCount)
   }
   handleAction(){
     this.actionType="SignUp"

@@ -254,6 +254,40 @@
         "zipcode": ""
       },
       "id": 5
+    },
+    {
+      "firstName": "pratiksha",
+      "lastName": "deshmukh",
+      "mobileNumber": 1234567890,
+      "dateOfBirth": "1996-12-16",
+      "emailId": "pratiksha@gmail.com",
+      "password": "1612",
+      "confirmPassword": "1612",
+      "address": {
+        "line1": "",
+        "line2": "",
+        "city": "",
+        "state": "",
+        "zipcode": ""
+      },
+      "id": 6
+    },
+    {
+      "firstName": "akshay",
+      "lastName": "kamble",
+      "mobileNumber": 1234567890,
+      "dateOfBirth": "1996-10-14",
+      "emailId": "test@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "address": {
+        "line1": "",
+        "line2": "",
+        "city": "",
+        "state": "",
+        "zipcode": ""
+      },
+      "id": 7
     }
   ]
 }
